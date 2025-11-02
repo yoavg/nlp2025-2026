@@ -1,0 +1,8 @@
+zsh.2025-11-02.15-43-52.MacBook-Pro-3.local cd nlp2025-2026
+zsh.2025-11-02.15-43-54.MacBook-Pro-3.local ls
+zsh.2025-11-02.15-43-58.MacBook-Pro-3.local ls -a
+zsh.2025-11-02.15-44-08.MacBook-Pro-3.local rm -rf .git
+zsh.2025-11-02.15-44-10.MacBook-Pro-3.local ls
+zsh.2025-11-02.15-44-19.MacBook-Pro-3.local git init
+zsh.2025-11-02.15-44-45.MacBook-Pro-3.local git add -m "initial commit based on 2024-2025"
+zsh.2025-11-02.15-45-02.MacBook-Pro-3.local git commit -m "initial commit based on 2024-2025"
