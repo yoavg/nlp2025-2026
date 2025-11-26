@@ -1,16 +1,15 @@
 # Intro to NLP 2025-2026, Assignment 2.
 
-This assignment has two parts. You can start working on the Part A right away, while part B contains concepts you will only see in the contextualized word vectors class (on Dec. 10). However, parts of part B (namely B.1.1 and B.1.2) do not require these concepts and you can start with them.
-Additionally, the class will be helpful, but is not _essential_, and you can also read the other parts and attempt to start with them right away.
+This assignment has two parts. In part A, we will explore a simple generation procedure based on context-free grammars. In part B, we will work with contextualized word vectors.
 
-# Part A: Generating sentences with a Context-Free Grammar (50 points)
+# Part A: Generating sentences with a Context-Free Grammar (40 points)
 
    _Credit due_: This part of the assignment is based on [an assignment](https://www.cs.jhu.edu/~jason/465/hw-grammar/hw-grammar.pdf) by Jason Eisner at JHU.
 
 ## Goal
 This part will help you understand how Context-Free Grammars (CFGs) work, and how they can be used --- sometimes comfortably, sometimes not so much --- to describe sentences in natural language. It will also make you think about some linguistic phenomena that are interesting in their own right.
 
-## Deliverables 
+## Deliverables
 
 In this part, you will submit a report file (`cfg.pdf`) as well as some other files (corresponding to code, grammars, and generated sentences) to be discussed below. Whenever the assignment says _"discuss..."_ or _"describe..."_ it means that you should write a discussion or a description in the `cfg.pdf` file. Make sure this file is clearly organized, and indicates clearly which question you are answering.
 
@@ -196,7 +195,7 @@ Your code should support both the `-n` from part B.0, and the `-t` switch, eithe
 **What To Submit:**
 Generate 5 more random sentences, in tree format. Submit them as in a file called `b3.gen` as well as the code for the modified `generate.py` program.
 
-## Part A.4: Additional Linguistic Structures (24 pts, 12 each)
+## Part A.4: Additional Linguistic Structures (14 pts, 7 each)
 
 Think about all of the  additional linguistic phenomena presented below, and extend your grammar from part B.2 to handle **TWO** of them -- any two your choice. Briefly discuss your solutions and provide sample output.
 
@@ -289,10 +288,10 @@ In addition, provide a description of your solution in `cfg.pdf`.
 **Important Note:** Your final grammar should handle everything from part B.2, plus both of the phenomena you chose to add. This means you have to worry about how your rules might interact with one another. Good interactions will elegantly use the same rule to help describe two phenomena. Bad interactions will allow your program to generate ungrammatical sentences, which will hurt your grade.
 
 
+# Part B: Contextualized Vectors, Parts of Speech, and Named Entities (60 points)
 
-# Part B: Contextualized Vectors, Parts of Speech, and Named Entities (80 points)
+This part of the assignment will have you working with contextualized word vectors in the context of sequence tagging tasks.
 
-This part of the assignment will have you working with word vectors (both static and contextualized) in the context of sequence tagging tasks.
 You will also explore the concepts of _Part-of-speech (POS) tagging_ and _named-entity-recognition (NER)_.
 
 ## B.0 Warmup on Contextualized Vectors
@@ -315,6 +314,10 @@ To learn to use the model, after installing the library (`pip install transforme
 4) Find a sentence with $n$ words, that is tokenized into $m \gt n$ tokens by the tokenizer.
 
 Note: when we say "MASK" we mean a special sequence which is known by the model is being the MASK token. See the usage instruction of the model to figure out how to feed this token to the model.
+
+### About GPUs
+
+The models in this assignment are small, and can also work on CPU. However, using GPU can really speed things up in terms of inference. While you are not required to use a GPU (and the assignment is designed to be possible without it), you can use Google Colab which gives access to sufficently powered GPU.
 
 ## B.1 Parts-of-speech Tagging
 
@@ -339,10 +342,10 @@ The format is one sentence per line, the text is already pre-tokenized (in the s
 
 In each of the following sections, your task will be simple: use the annotated data in the training set, to best predict the parts-of-speech of the words in the test set sentences.
 
-You can do whatever you want to achieve a good accuracy, as long as you don’t:
+You can do whatever you want to achieve a good accuracy, as long as you:
 
-1) look at the labels of the test data—this is never allowed.
-2) tune any parameters or train any model—this is not allowed in this assignment.
+1) do not look at the labels of the test data—this is never allowed.
+2) do not tune any parameters or train any model—this is not allowed in this assignment.
 
 What can you do, then? You are free to choose any approach you wish. For example, you could encode some or all the data in the training set, remember the labels, and look for similarities to encoded test vectors. Or you could predict the top-k words for some or all the words in the training set, and use them somehow. Or you could use clustering of vectors. Or you could use dimensionality reduction as we did in part A. Or you can mix-and-match these approaches. Or you could do something else.
 
@@ -350,11 +353,11 @@ What can you do, then? You are free to choose any approach you wish. For example
 
 **Combining vectors**: as we discuss in class, natural ways to combine vectors are by concatenation or by addition.
 
-**Runtime**: we do not talk about efficiency or running time in this assignment, and things are possible to run also without a GPU. However, if your predictor cannot finish tagging the data before you need to submit the assignment, then there might be a problem.
+**Runtime**: we do not talk about efficiency or running time in this assignment, and things are possible to run also without a GPU. However, if your predictor cannot finish tagging the data before you need to submit the assignment, then there might be a problem. NOTE: it will be highly more efficient to first do inference and produce all the in-context vectors for all the text, save them in a file (or files) and only work with these pre-computed items in all your future experimentation.
 
 **What to submit**: In addition to the written report, for each of the following subtasks, send a prediction file named `POS_preds_X.txt` where `X` is replaced by the subtask number (B-1-1, B-1-2 or B-1-3). Each line in the predictions should correspond to a test sentence and be in the same format of the training data.
 
-### B.1.1 No Word Vectors (20 points)
+### B.1.1 No Word Vectors (15 points)
 
 In this part of the assignment, you are not allowed to use any word vectors at all. However, you are allowed to count word, count (word,tag) pairs, to look into the characters the words are made of and count them as well, etc. 
 
@@ -362,19 +365,19 @@ One simple approach would be to count for each word type in the training corpus 
 
 Describe your approach in the report, and submit your predictions over the test data in a file called `POS_preds_B-1-1.txt`.
 
-### B.1.2 Static Word Vectors (20 points)
+### B.1.2 Static Word Vectors (15 points)
 
 As before, but now you are allowed to use static vectors (word2vec or glove vectors, as used in part A). You can use either single vectors, or vectors in a window surrounding the word. You can also use some of the counts from part B.1.1, if you find them helpful. What is the best accuracy you can get?
 
 Describe your approach in the report, and submit your predictions over the test data in a file called `POS_preds_B-1-2.txt`.
 
-### B.1.3 Contextualized word vectors (20 points)
+### B.1.3 Contextualized word vectors (15 points)
 
 As before, but now you are allowed to use the output of roberta-base (either the word vectors for each position, or the word predictions for each position, or both, or any other output you can get out of the pre-trained roberta-base model). You can also use some of the counts from part B.1.1, or the static vectors from part B.1.2, if you find them helpful. What is the best accuracy you can get?
 
 Describe your approach in the report, and submit your predictions over the test data in a file called `POS_preds_B-1-3.txt`.
 
-## B.2 Named Entity Recognition (20 points)
+## B.2 Named Entity Recognition (15 points)
 
 We now switch from predicting parts-of-speech (which are per-word) to named entities (which are spans).
 
