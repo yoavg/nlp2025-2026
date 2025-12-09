@@ -83,7 +83,7 @@ Each generated sentence should be printed on its own line, and there should be n
 
 ## Part A.1: Weights (5 points)
 
-Consider the output sentences you generated in part B.0 and answer the following questions (in `cfg.pdf`):
+Consider the output sentences you generated in part A.0 and answer the following questions (in `cfg.pdf`):
 
 1. Why does the program generate so many long sentences? Specifically, what grammar rule is responsible for that and why? What is special about this rule? discuss.
 2. The grammar allows multiple adjectives, as in: _"the fine perplexed pickle"_. Why do the generated sentences show this so rarely? discuss.
@@ -124,7 +124,7 @@ Modify the grammar so that it can also generate the types of phenomena illustrat
 7. the president worked on every proposal on the desk .
 8. Sally is lazy .
 9. Sally is eating a sandwich .
-10. the president thought that sally is a sandwich .
+10. the president thought that Sally is a sandwich .
 
 You want to end up with a single grammar that can generate _all_ of the sentences in part B.1 as well as _all_ sentences (1)--(10) here.  Furthermore, we expect your grammar to generate sentences which do not exist in this list but have grammatically similar structures.
 
@@ -450,6 +450,9 @@ Your predictions on the test sets (we will measure your accuracies on these usin
 - `NER_preds.txt`
 
 A PDF file called `part-B.pdf` containing your names and IDs, and a description of your train and dev scores and the approaches and the working process you took for each of the pars B.1.1, B.1.2, B.1.3, B.2.
+
+In addition, please attach all code files you used to generate your predictions for both the NER and POS tasks.
+These should include the scripts or notebooks you ran for training, inference, and evaluation. Organize them clearly (e.g., in a code/ folder).
 
 # A note on grading:
 
