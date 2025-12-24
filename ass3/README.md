@@ -88,7 +88,7 @@ In order to use ROUGE to evaluate the generated question sets, we will view the 
 
 _Which rouge metrics?_
 
-- use the [rouge-score](https://github.com/google-research/google-research/tree/master/rouge) python package (`pip install rouge-score`) to compute the ROUGE-2, ROUGE-L and ROUGE-W scores for each of your 20 (g,p) pairs in the evaluation set.
+- You may use existing Python packages (e.g., the rouge-score package installable via §pip install rouge-score§) to compute ROUGE-2, ROUGE-L, and ROUGE-W scores for each of the 20 (g, p) pairs in the evaluation set.
 - Compute an average ROUGE-2, average ROUGE-L and average ROUGE-W of all pairs.
 
 Note that the way we compute ROUGE scores over the sets of questions by linearizing each set into a single string and comparing ROUGE between two strings representing sets, is not ideal (why?). You are encouraged to think of better alternatives (and possibly also to implement them).
