@@ -230,8 +230,6 @@ You need to submit 3 files as described above:
 - `q1.txt` - top scoring doc-ids for query 1, for different indexes. (Part 1b)
 - `scores.txt` - recall@20 and MRR for all queries, for different indexes. (Part 1b)
 
-You need to submit this part by **Dec 26, 2024**.
-
 ## Part 2: Retrieval Augmented Generation system (65 points)
 
 See here:
