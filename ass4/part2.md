@@ -1,4 +1,4 @@
-# Intro to NLP 2024-2025, Assignment 3 - Part 2
+# Intro to NLP 2025-2026, Assignment 4 - Part 2
 
 **Trying to help people get their rights!**
 
@@ -13,7 +13,6 @@ This is the evaluation set ("test-set") based on your submissions, which you sho
 It is composed of a random sample of queries you submitted. Not all your submissions are represented: some lines were just not selected in the random sample, while other submissions were in the wrong format and we could not parse them automatically (those of you with such submissions, pleae fix this by submitting a fix).
 
 ## Part 2: Retrieval Augmented Generation system (65 points)
-**Submission deadline: 9/1/2025.**
 
 In this part you will try and create a system to answer the queries you (collectively) created in part 1. This may not be easy, but try to answer as many of them as possible. 
 
