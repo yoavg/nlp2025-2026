@@ -6,15 +6,15 @@ Back to [Part 1](README.md)
 
 ## Eval Set:
 
-This is the evaluation set ("test-set") based on your submissions, which you should evaluate your system on (see "Evaluation") below.
+This is the evaluation set ("test-set") based on past submissions, which you should evaluate your system on (see "Evaluation") below.
 
 - [eval-set.csv](eval-set.csv)
 
-It is composed of a random sample of queries you submitted. Not all your submissions are represented: some lines were just not selected in the random sample, while other submissions were in the wrong format and we could not parse them automatically (those of you with such submissions, pleae fix this by submitting a fix).
+It is composed of a random sample of queries you submitted. Not all your submissions are represented: some lines were just not selected in the random sample, while other submissions were in the wrong format and we could not parse them automatically (those of you with such submissions, please fix this by submitting a fix).
 
 ## Part 2: Retrieval Augmented Generation system (65 points)
 
-In this part you will try and create a system to answer the queries you (collectively) created in part 1. This may not be easy, but try to answer as many of them as possible. 
+In this part you will try and create a system to answer the queries from the eval set. This may not be easy, but try to answer as many of them as possible. 
 
 This work has four conceptual parts (which interact with each other):
 
