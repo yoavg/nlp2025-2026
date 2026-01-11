@@ -50,8 +50,6 @@ In this part, you will create a small annotated dev-set data for evaluating (and
 
 You will also get up-to-speed with indexing, retrieval and using LLMs on some English data.
 
-**You will submit this set by the end of the first week** and we will collect all of your individual submissions and release a test-set based on a subset of them. You will have to submit results of your system on the joint test set in your final report.
-
 ### Part 1a: Dev-set Creation (20 Points)
 
 The task we are attempting to solve is to answer questions based on the data in the כל זכות corpus, that is, to answer questions that will help people understand the rights available to them, and how to use them.
